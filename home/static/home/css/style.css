@@ -22,6 +22,8 @@ body{
     padding: 0;
     height: 100vh;
     background: var(--primary-color);
+    display: flex;
+    justify-content: space-between;
 }
 .sidebar .text{
     font-size: 14px;
@@ -147,4 +149,7 @@ header .image-text .header-text{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+}
+.dashboard{
+    display: flex;
 }
