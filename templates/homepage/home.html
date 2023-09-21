@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
+    <title>Condominio</title>
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{% static 'home/img/logo1.png' %}" alt="">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Condomínio</span>
+                    <span class="profession">Santa Catarina</span>
+                </div>
+            </div>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="search-box">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/lupa.png' %}" alt="">
+                            <input type="search" placeholder="Buscar" id="search">
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/casa.png' %}" alt="">
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/sino.png' %}" alt="">
+                            <span class="text nav-text">Notificações</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/cadastro.png' %}" alt="">
+                            <span class="text nav-text">Cadastros</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/sifrao.png' %}" alt="">
+                            <span class="text nav-text">Lançamentos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/relat.png' %}" alt="">
+                            <span class="text nav-text">Relatórios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'home/img/sair.png' %}" alt="">
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+            </div>
+        </div> 
+    </nav>
+    <section class="dashboard">
+        <h1>
+            Teste
+        </h1>
+    </section>
+</body> 
+</html>
