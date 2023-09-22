@@ -1,10 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from supabase import create_client 
 from django.conf import settings
+from setup.utils.get_table_data import get_table_data
 
 def index(request):
-    return render(request, 'residents/index.html')
+    data = get_table_data('residents_resident')
+
+    context = {
+        'data': data,
+    }
+
+    return render(request, 'residents/index.html', context)
 
 def send_resident_to_supabase(request):
     name = request.POST.get('name')
@@ -16,7 +23,4 @@ def send_resident_to_supabase(request):
     dados = [{'name': name, 'age': age, 'apartment': apartment}]
     resultado, erro = supabase.table('residents_resident').upsert(dados).execute()
 
-    if erro:
-        return HttpResponse(f"Erro ao enviar dados para o Supabase: {erro}")
-    else:
-        return HttpResponse("Dados enviados com sucesso para o Supabase!")
+    return redirect('resident_index')

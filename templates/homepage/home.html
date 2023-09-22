@@ -1,81 +1,118 @@
-<!DOCTYPE html>
-{% load static %}
 <html lang="en">
+    {%load static%}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'home/css/style.css' %}">
-    <title>Condominio</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'home.css' %}">
+    <title>Página Inicial</title>
 </head>
 <body>
-    <nav class="sidebar">
-        <header>
-            <div class="image-text">
-                <span class="image">
-                    <img src="{% static 'home/img/logo1.png' %}" alt="">
-                </span>
+    <div class="form-container">
+        <div class="form-card">
+            <h1>Cadastrar Residente</h1>
+            <form method="post" action="{% url 'send_resident_to_supabase' %}">
+                {% csrf_token %}
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br><br>
 
-                <div class="text header-text">
-                    <span class="name">Condomínio</span>
-                    <span class="profession">Santa Catarina</span>
-                </div>
-            </div>
-        </header>
-        <div class="menu-bar">
-            <div class="menu">
-                <ul class="menu-links">
-                    <li class="search-box">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/lupa.png' %}" alt="">
-                            <input type="search" placeholder="Buscar" id="search">
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/casa.png' %}" alt="">
-                            <span class="text nav-text">Dashboard</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/sino.png' %}" alt="">
-                            <span class="text nav-text">Notificações</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/cadastro.png' %}" alt="">
-                            <span class="text nav-text">Cadastros</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/sifrao.png' %}" alt="">
-                            <span class="text nav-text">Lançamentos</span>
-                        </a>
-                    </li>
-                    <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/relat.png' %}" alt="">
-                            <span class="text nav-text">Relatórios</span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <div class="bottom-content">
-                <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'home/img/sair.png' %}" alt="">
-                            <span class="text nav-text">Logout</span>
-                        </a>
-                    </li>
-            </div>
-        </div> 
-    </nav>
-    <section class="dashboard">
-        <h1>
-            Teste
-        </h1>
-    </section>
-</body> 
+                <label for="age">Idade:</label>
+                <input type="number" id="age" name="age" required><br><br>
+
+                <label for="apartment">Apartamento:</label>
+                <input type="text" id="apartment" name="apartment" required><br><br>
+                <!-- Adicione outros campos do formulário aqui -->
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <div class="form-card">
+            <h1>Cadastrar Apartamento</h1>
+            <form method="post" action="{% url 'send_apartment_to_supabase' %}">
+                {% csrf_token %}
+                <label for="number">Número:</label>
+                <input type="number" id="number" name="number" required><br><br>
+
+                <label for="bedrooms">Quartos:</label>
+                <input type="number" id="bedrooms" name="bedrooms" required><br><br>
+
+                <label for="bathrooms">Banheiros:</label>
+                <input type="number" id="bathrooms" name="bathrooms" required><br><br>
+
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" name="description" required></input><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <div class="form-card">
+            <h1>Cadastrar Garagem</h1>
+            <form method="post" action="{% url 'send_garage_to_supabase' %}">
+                {% csrf_token %}
+                <label for="number">Número:</label>
+                <input type="number" id="number" name="number" required><br><br>
+
+                <label for="reserved">Reservado:</label>
+                <input type="checkbox" id="reserved" name="reserved"><br><br>
+
+                <label for="description">Descrição:</label>
+                <input type="text" id="description" name="description" required></input><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <div class="form-card">
+            <h1>Cadastrar Notificação</h1>
+            <form method="post" action="{% url 'send_notification_to_supabase' %}">
+                {% csrf_token %}
+                <label for="subject">Assunto:</label>
+                <input type="text" id="subject" name="subject" required><br><br>
+            
+                <label for="message">Mensagem:</label>
+                <input type="text" id="message" name="message" required></input><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+
+        <div class="form-card">
+            <h1>Cadastrar Valor</h1>
+            <form method="post" action="{% url 'send_wallet_to_supabase' %}">
+                {% csrf_token %}
+                <label for="balance">Saldo:</label>
+                <input type="number" id="balance" name="balance" required><br><br>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </div>
+    </div>
+
+    <div class="card-container">
+        <div class="count-card">
+            <h2>Residentes</h2>
+            <p> {{ counts.residents_resident }}</p>
+        </div>
+
+        <div class="count-card">
+            <h2>Apartamentos</h2>
+            <p> {{ counts.apartments_apartment }}</p>
+        </div>
+
+        <div class="count-card">
+            <h2>Garagens</h2>
+            <p> {{ counts.garages_garage }}</p>
+        </div>
+
+        <div class="count-card">
+            <h2>Notificações</h2>
+            <p> {{ counts.notifications_notification }}</p>
+        </div>
+
+        <div class="count-card">
+            <h2>Carteira</h2>
+            <p> {{ counts.wallet_wallet }}</p>
+        </div>
+    </div>
+</body>
 </html>

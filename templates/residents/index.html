@@ -1,24 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+    {% load static %}
 <head>
     <meta charset="UTF-8">
-    <title>Formulário para Envio de Resident</title>
+    <title>Residentes</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
 </head>
 <body>
-    <h1>Formulário para Envio de Resident</h1>
-
-    <form method="post" action="{% url 'send_resident_to_supabase' %}">
-        {% csrf_token %}
-        <label for="name">Nome:</label>
-        <input type="text" id="name" name="name" required><br><br>
-
-        <label for="age">Idade:</label>
-        <input type="number" id="age" name="age" required><br><br>
-
-        <label for="apartment">Endereço:</label>
-        <input type="text" id="apartment" name="apartment" required><br><br>
-
-        <input type="submit" value="Enviar">
-    </form>
+    <h1>Lista de residentes</h1>
+    <a href="/">Voltar</a>
+    <table class="container">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>NOME</th>
+                <th>IDADE</th>
+                <th>APARTAMENTO</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in data %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.age }}</td>
+                <td>{{ item.apartment }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </body>
 </html>
