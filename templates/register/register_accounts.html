@@ -1,0 +1,109 @@
+<!-- <!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'setup/css/style.css' %}">
+    <title>Condominio</title>
+</head>
+<body>
+    <nav class="sidebar">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="{% static 'register_accounts/img/logo1.png' %}" alt="">
+                </span>
+
+                <div class="text header-text">
+                    <span class="name">Condomínio</span>
+                    <span class="profession">Santa Catarina</span>
+                </div>
+            </div>
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+                <ul class="menu-links">
+                    <li class="search-box">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/lupa.png' %}" alt="">
+                            <input type="search" placeholder="Buscar" id="search">
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/casa.png' %}" alt="">
+                            <span class="text nav-text">Dashboard</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/sino.png' %}" alt="">
+                            <span class="text nav-text">Notificações</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/cadastro.png' %}" alt="">
+                            <span class="text nav-text">Cadastros</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/sifrao.png' %}" alt="">
+                            <span class="text nav-text">Lançamentos</span>
+                        </a>
+                    </li>
+                    <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/relat.png' %}" alt="">
+                            <span class="text nav-text">Relatórios</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="bottom-content">
+                <li class="nav-link">
+                        <a href="#">
+                            <img class="img" src="{% static 'register_accounts/img/sair.png' %}" alt="">
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+            </div>
+        </div> 
+    </nav> -->
+    {% extends "base_generic.html" %}
+
+    {% block content %}
+    <section class="dashboard">
+
+        <h1 class="titulo">Lançamentos</h1>
+    
+        <div class="form-container">
+            <h2 class="subtitulo">Adicionar Nova Conta</h2>
+            <form class="conta-form" method="post" >
+                {% csrf_token %}
+                <label for="descricao" class="label-descricao">Descrição:</label>
+                <input type="text" id="descricao" name="description" class="input-descricao" required>
+                
+                <label for="valor" class="label-valor">Valor:</label>
+                <input type="number" id="valor" name="value" class="input-valor" required>
+                
+                <label for="tipo" class="label-tipo">Tipo:</label>
+                <select id="tipo" name="type" class="select-tipo" required>
+                    <option value="receber">Receber</option>
+                    <option value="pagar">Pagar</option>
+                </select>
+                
+                <button type="submit" class="botao-adicionar" value="Enviar">Adicionar Conta</button>
+            </form>
+        </div>
+        
+        <div class="lista-container">
+            <h2 class="subtitulo">Lista de Contas</h2>
+            <ul class="conta-list">
+                
+            </ul>
+        </div>
+    </section>
+    {% endblock %}

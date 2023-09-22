@@ -35,7 +35,8 @@ INSTALLED_APPS = [
     'apartments',
     'notifications',
     'garages',
-    'wallet'
+    'wallet',
+    'register_accounts',
 ]
 
 MIDDLEWARE = [
