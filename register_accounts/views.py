@@ -1,22 +1,29 @@
-from django.shortcuts import render
-# from django.http import HttpResponse
-# from supabase import create_client 
-# from django.conf import settings
+from django.shortcuts import render, redirect
 
 def register(request):
     return render(request, 'register/register_accounts.html')
 
-# def send_accounts_to_supabase(request):
-#     description = request.POST.get('description')
-#     value = request.POST.get('value')
-#     type = request.POST.get('type')
+def process_form(request):
 
-#     supabase = create_client(settings.SUPABASE_URL, settings.SUPABASE_KEY)
+    dados = {}
 
-#     dados = [{'description': description, 'value': value, 'type': type}]
-#     resultado, erro = supabase.table('accounts').upsert(dados).execute()
+    if request.method == 'POST':
+        tipo = request.POST.get('type')
+        descricao = request.POST.get('description')
+        apto = request.POST.get('apto')
+        valor = request.POST.get('valor')
+        numero_nota = request.POST.get('numero_nota')
+        data_nota = request.POST.get('data_nota')
+        numero_boleto = request.POST.get('numero_boleto')
+        data_vencimento = request.POST.get('data_vencimento')
 
-#     if erro:
-#         return HttpResponse(f"Erro ao enviar dados para o Supabase: {erro}")
-#     else:
-#         return HttpResponse("Dados enviados com sucesso para o Supabase!")
+    dados['tipo'] = tipo
+    dados['descricao'] = descricao
+    dados['apto'] = apto
+    dados['valor'] = valor
+    dados['numero_nota'] = numero_nota
+    dados['data_nota'] = data_nota
+    dados['numero_boleto'] = numero_boleto
+    dados['data_vencimento'] = data_vencimento
+
+    return render(request, 'register/register_accounts.html', {'dados': dados})

@@ -42,6 +42,7 @@ body{
     background-color: var(--sidebar-color);
     flex-wrap: wrap;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    
 }
 
 .sidebar li{
@@ -50,6 +51,7 @@ body{
     list-style: none;
     display: flex;
     align-items: center;
+    
 }
 .menu-links{
     display: initial;
@@ -149,109 +151,48 @@ header .image-text .header-text{
     flex-direction: column;
     justify-content: space-between;
 }
+
 .dashboard{
     width: 100%;
 }
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    margin: 0;
-    padding: 0;
-}
+body{
+    background-color: var(--primary-color-ligth);
+    overflow: hidden;
 
-.titulo {
+}
+/* Adicione as regras para as novas seções */
+.dashboard-header {
     background-color: var(--primary-color);
     text-align: center;
     padding: 20px;
     margin: 10px;
+    border-radius: 10px;
     color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.condominio-section,
+.avisos-section {
+    background-color: var(--sidebar-color);
+    padding: 20px;
+    margin: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
 }
 
-.form-container,
-.lista-container {
-    background-color: #fff;
-    margin: 20px;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+.condominio-section h2,
+.avisos-section h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.conta-form {
-    display: grid;
-    gap: 10px;
-}
-
-.label-descricao,
-.label-valor,
-.label-tipo {
-    font-weight: bold;
-}
-
-.input-label-container {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 20px;
-}
-
-.input-pair {
-    flex: 1;
-    margin-right: 10px;
-}
-
-.label-valor {
-    margin-bottom: 5px;
-}
-
-.input-valor {
-    width: 100%;
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
-.input-descricao,
-.select-tipo{
-    width: 100%;
-}
-.input-descricao,
-.input-valor,
-.select-tipo {
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-}
-
-.botao-adicionar {
-    background-color:var(--primary-color);
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-.botao-adicionar:hover {
-    background-color:var(--primary-color-ligth);
-    border: 1px solid var(--primary-color);
-    color: var(--primary-color);
-}
-
-.conta-list {
+.aviso-list {
+    /* Estilos para a lista de avisos */
     list-style-type: none;
     padding: 0;
 }
 
-.conta-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 8px 0;
-    border-bottom: 1px solid #ccc;
-}
-
-.conta-list li:last-child {
-    border-bottom: none;
+.aviso-list li {
+    margin-bottom: 10px;
 }

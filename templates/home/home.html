@@ -1,0 +1,29 @@
+{% extends "model/index.html" %}
+{% load static %}
+{% block link %}<link rel="stylesheet" href="{% static 'home/css/style.css' %}">{% endblock %}
+{% block content %}
+<section class="dashboard">
+    <header class="dashboard-header">
+        <h1>Bem-vindo à Administração do Condomínio</h1>
+    </header>
+    <div class="condominio-section">
+        <h2>Condomínios</h2>
+        <!-- Aqui você pode adicionar informações sobre condomínios -->
+        <div class="condominio-info">
+            <p>Nome do Condomínio: Condomínio Santa Catarina</p>
+            <p>Total de Unidades: 100</p>
+            <!-- Adicione mais informações sobre condomínios aqui -->
+        </div>
+    </div>
+    <div class="avisos-section">
+        <h2>Avisos</h2>
+        <!-- Aqui você pode listar os avisos relacionados ao condomínio -->
+        <ul class="aviso-list">
+            <li>Aviso 1: Lorem ipsum dolor sit amet.</li>
+            <li>Aviso 2: Consectetur adipiscing elit.</li>
+            <li>Aviso 3: Sed do eiusmod tempor incididunt.</li>
+            <!-- Adicione mais avisos aqui -->
+        </ul>
+    </div>
+</section>
+{% endblock %}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'register_accounts/css/style.css' %}">
+    {% block link %}<link rel="stylesheet" href="{% static 'model/css/style.css' %}">{% endblock %}
     {% block title %}<title>Condominio</title>{% endblock %}
 </head>
 <body>
@@ -13,7 +13,7 @@
         <header>
             <div class="image-text">
                 <span class="image">
-                    <img src="{% static 'register_accounts/img/logo1.png' %}" alt="">
+                    <img src="{% static 'model/img/logo1.png' %}" alt="">
                 </span>
 
                 <div class="text header-text">
@@ -27,37 +27,37 @@
                 <ul class="menu-links">
                     <li class="search-box">
                         <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/lupa.png' %}" alt="">
+                            <img class="img" src="{% static 'model/img/lupa.png' %}" alt="">
                             <input type="search" placeholder="Buscar" id="search">
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/casa.png' %}" alt="">
+                        <a href="{% url 'home:home' %}">
+                            <img class="img" src="{% static 'model/img/casa.png' %}" alt="">
                             <span class="text nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/sino.png' %}" alt="">
+                            <img class="img" src="{% static 'model/img/sino.png' %}" alt="">
                             <span class="text nav-text">Notificações</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/cadastro.png' %}" alt="">
+                            <img class="img" src="{% static 'model/img/cadastro.png' %}" alt="">
                             <span class="text nav-text">Cadastros</span>
                         </a>
                     </li>
                     <li class="nav-link">
-                        <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/sifrao.png' %}" alt="">
+                        <a href="{% url 'register_accounts:register' %}">
+                            <img class="img" src="{% static 'model/img/sifrao.png' %}" alt="">
                             <span class="text nav-text">Lançamentos</span>
                         </a>
                     </li>
                     <li class="nav-link">
                         <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/relat.png' %}" alt="">
+                            <img class="img" src="{% static 'model/img/relat.png' %}" alt="">
                             <span class="text nav-text">Relatórios</span>
                         </a>
                     </li>
@@ -66,7 +66,7 @@
             <div class="bottom-content">
                 <li class="nav-link">
                         <a href="#">
-                            <img class="img" src="{% static 'register_accounts/img/sair.png' %}" alt="">
+                            <img class="img" src="{% static 'model/img/sair.png' %}" alt="">
                             <span class="text nav-text">Logout</span>
                         </a>
                     </li>

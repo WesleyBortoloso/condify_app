@@ -1,7 +1,9 @@
 from django.urls import path
-from register_accounts.views import register
+from . import views
 
+app_name = 'register_accounts'
 
 urlpatterns = [
-    path('', register),
+    path('register/', views.register, name='register'),
+    path('process_form/', views.process_form, name='process_form'),
 ]
