@@ -35,7 +35,9 @@ INSTALLED_APPS = [
     'apartments',
     'notifications',
     'garages',
-    'wallet'
+    'wallet',
+    'register_accounts',
+    'model',
 ]
 
 MIDDLEWARE = [
@@ -121,10 +123,6 @@ USE_TZ = True
 
 
 STATIC_URL = 'static/'
-
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
 
 
 # Default primary key field type
