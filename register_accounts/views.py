@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 
+
 def register(request):
     return render(request, 'register/register_accounts.html')
 

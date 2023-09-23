@@ -9,7 +9,7 @@
     
         <div class="form-container">
             <h2 class="subtitulo">Adicionar Nova Conta</h2>
-            <form class="conta-form" method="post" action="{% url 'process_form' %}">
+            <form class="conta-form" method="post" action="{% url 'register_accounts:process_form' %}">
                 {% csrf_token %}
 
                 <label for="tipo" class="label-tipo">Tipo:</label>
@@ -62,18 +62,39 @@
         
         <div class="lista-container">
             <h2 class="subtitulo">Lista de Contas</h2>
-            <ul class="conta-list">
+            <table class="conta-table">
                 {% if dados %}
-                    <li>Tipo: {{ dados.tipo }}</li>
-                    <li>Descrição: {{ dados.descricao }}</li>
-                    <li>Apartamento: {{ dados.apto }}</li>
-                    <li>Valor: {{ dados.valor }}</li>
-                    <li>Número da Nota: {{ dados.numero_nota }}</li>
-                    <li>Data da Nota: {{ dados.data_nota }}</li>
-                    <li>Número do Boleto: {{ dados.numero_boleto }}</li>
-                    <li>Data de Vencimento: {{ dados.data_vencimento }}</li>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Descrição</th>
+                            <th>Apartamento</th>
+                            <th>Valor</th>
+                            <th>Número da Nota</th>
+                            <th>Data da Nota</th>
+                            <th>Número do Boleto</th>
+                            <th>Data de Vencimento</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>{{ dados.tipo }}</td>
+                            <td>{{ dados.descricao }}</td>
+                            <td>{{ dados.apto }}</td>
+                            <td>{{ dados.valor }}</td>
+                            <td>{{ dados.numero_nota }}</td>
+                            <td>{{ dados.data_nota }}</td>
+                            <td>{{ dados.numero_boleto }}</td>
+                            <td>{{ dados.data_vencimento }}</td>
+                            <td>
+                                <button class="editar-button">Editar</button>
+                            </td>
+                        </tr>
+                    </tbody>
                 {% endif %}
-            </ul>
+            </table>
         </div>
+        
     </section>
 {% endblock %}
